@@ -177,102 +177,154 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  construction
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Construction</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Heavy machinery, structural components, infrastructure support, and earthmoving assets.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Construction"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP8aMc5zqxjOlCCT0L2mCgYna372uACsVFwZDSfcli32Oil57jNgY_Le6WqH2x97TV96C73RXa8U55CHXe3KUxUR2jLN3dr6b-I95t64kjU4n-SwpqdiH7bt2Z_VAiGji-ktRr-2_YtEL11wKJw_7CZlEX3r3eabVFDvy0hDZdpZYDGyRffyosfZxUAqdScwQkKtosQFwELhJFBf0MRDfxLdfSiPlxTwGLJ1W11tdd9U5EH9lU_g7Z5mUYS020UstvBtOvRxoxOh0"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    construction
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Construction</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Heavy machinery, structural components, infrastructure support, and earthmoving assets.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  agriculture
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Agriculture</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Farm equipment, harvesting systems, irrigation networks, and specialized spares.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Agriculture"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw-kS6Z1O7Ua5PxU67wKvBE8QcAccr_QELXBrssFmz_A1EqVy8aEfThdnqCX1LEzO3rkt23IMY_EBJ0Sjls-79DmhHCR4rF9vkXsrbJl_MTB_WjY13cnejqyUxQdVU-xMoCr2M7Mi4cu-KxCk-H1U3mSYAJHldC1LF1PkyBuZQ_5TVgFBHO6-ngwNwyghcQvO9TW4KQvbw03-NMqx2Ku5GVpPPYPqtzND6OeFjkMFQ6pVH298cLbT3-LIjeqcTOcZnTACVcwmhFWA"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    agriculture
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Agriculture</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Farm equipment, harvesting systems, irrigation networks, and specialized spares.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  precision_manufacturing
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Manufacturing</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Production line systems, automation machinery, parts procurement, and consumables.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Manufacturing"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7yESyempNPbdErQAU9ZgmNpAOsX99URKQxvs9A1RS6qRDoJfRiW9pNwaSUPpQY9HuOOBsWP0zqOYV6kSNB-GTQyARPkctgPWrwGqc62whKRSIo7C2QahOvtTkrxVQS3PDeRtwmfZg_Hw60jMHZOd4yvwMRjRjx7Z1ZCpgzAj-ENYXMc4jYJ0FYfW3EQ9jEdT5gwoH75RyFSomM6kk-30wEdGJdg9SK15eqC5pGiwaHPgePthlOf5phWwW9Qjn4LPGTEoVLB67ic"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    precision_manufacturing
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Manufacturing</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Production line systems, automation machinery, parts procurement, and consumables.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  local_shipping
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Automotive</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Commercial vehicle fleets, utility transport solutions, and spare parts coordination.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Automotive"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHJ0wXHSaNyn2p32WIJwnZeIW8_ikH0bvTr2RHq8V_vcPuwOZuJo95gS21OyHiqJYtPATL20m-Ke4t7w-THja2h6Jq-Gpw4xQsahQwj31qOjP8KLuFQzPKLILbKX1XRi0djyLuweZmpLS4c0aLpuG094fmKqkAfbCrgDQtqc36MjHrwny5a3JZ4qZyvq33H8z3BFG_2czZcrxktNDRpxPuoCXQnAHB8pPv9tkjHT-PF2lVbGs9iPD8WeOqxyCF4GGFjDdkiZdYtBM"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    local_shipping
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Automotive</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Commercial vehicle fleets, utility transport solutions, and spare parts coordination.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Card 5 (Wide Solar Card) */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group md:col-span-2 border border-gray-100">
-              <div className="flex flex-col sm:flex-row gap-6 items-center h-full justify-between">
-                <div className="flex-1">
-                  <span className="material-symbols-outlined text-4xl text-primary mb-4 group-hover:text-[#D4A017] transition-colors">
-                    science
-                  </span>
-                  <h3 className="font-headline-md text-xl text-primary mb-2">Chemicals &amp; Materials</h3>
-                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                    Industrial raw materials, custom chemicals, and specialized compounds sourced securely for manufacturers.
-                  </p>
-                </div>
-                <div className="w-full sm:w-48 h-32 overflow-hidden rounded-lg shrink-0">
-                  <img
-                    className="w-full h-full object-cover"
-                    alt="Industrial chemicals and compounds processing"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ8YSBLlTgRnYKgCe6BJDdfreW1UaLmCu678w8VMeVhA200Ig4EKzHphAgEiuP2nrVTjJd9U4yuAhM4PTlgZhwMlwHhcw1KSXHNZwGJlvsH3noSwgPMFzZLkMJAR8yju2GYJxiKZbvoKI9AVb3nEWgW_FqBgYtENbjoxiiy6wgbm_EHFCc99IKytoH72H22399c7xBO9r2E-irHSXkLa-ui4ntkZrJE5h9grdFvL2xVt1wtAgZfNOTFr3xjKur1QBhGJsKG7xWKTo"
-                  />
-                </div>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group md:col-span-2 border border-gray-100 flex flex-col sm:flex-row overflow-hidden min-h-[320px]">
+              <div className="flex-1 p-8 flex flex-col justify-center">
+                <span className="material-symbols-outlined text-4xl text-primary mb-4 group-hover:text-[#D4A017] transition-colors">
+                  science
+                </span>
+                <h3 className="font-headline-md text-xl text-primary mb-2">Chemicals &amp; Materials</h3>
+                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                  Industrial raw materials, custom chemicals, and specialized compounds sourced securely for manufacturers.
+                </p>
+              </div>
+              <div className="w-full sm:w-1/2 min-h-[200px] sm:min-h-full overflow-hidden relative shrink-0">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Industrial chemicals and compounds processing"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ8YSBLlTgRnYKgCe6BJDdfreW1UaLmCu678w8VMeVhA200Ig4EKzHphAgEiuP2nrVTjJd9U4yuAhM4PTlgZhwMlwHhcw1KSXHNZwGJlvsH3noSwgPMFzZLkMJAR8yju2GYJxiKZbvoKI9AVb3nEWgW_FqBgYtENbjoxiiy6wgbm_EHFCc99IKytoH72H22399c7xBO9r2E-irHSXkLa-ui4ntkZrJE5h9grdFvL2xVt1wtAgZfNOTFr3xjKur1QBhGJsKG7xWKTo"
+                />
               </div>
             </div>
 
             {/* Card 6 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  medical_services
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Medical Equipment</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Diagnostic systems, healthcare furniture, and medical consumables.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Medical Equipment"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk2rUm47blgEVgbGUv-C7r5WJALDvEAjVN7c50gYQxyHvUDRuOE5Xh8Svdlr0GLhkaSbApWZavRFGjZPUiWDBRN6fg6mrgt57AJMCqYyHzRZEKCi9l_zxQIQIl5XKwxOmgxeclatEUQJ_POSWQBJv2RqeeegeeSyCg1onbqUaYtM8Luz6Os6FhhBuSPyujmcd8e_ZRQyHDVr_VEroOhwinAIEE1rKxKW6u3YTIyLkKySkT1z_uP15KE5_y8HULntu03wyWnB6abOw"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    medical_services
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Medical Equipment</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Diagnostic systems, healthcare furniture, and medical consumables.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Card 7 */}
-            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between min-h-[220px]">
-              <div>
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:text-[#D4A017] transition-colors">
-                  health_and_safety
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Safety &amp; PPE</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Compliance protective gear, site safety systems, and response equipment.
-                </p>
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  alt="Safety & PPE"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwHNRYmDcEfBbROrWZbzwlvmVxddlR6GMt-MBHxxMmslH49qKoJPaAfojRm_ComoLy5LXdFI81FVe8W1I23kYAJManHvF5EavxxqK0sBXRJjaVYokN-woqdrYE-MRdhIuVsGE2L88Mt_EXUeOtSLVtUfwEIoQGpO-an3WRuB4SsmLsRE7k9wCddiz5M2PnaKP6OkqZmiSuRa9cyk0sYi38chZ0VzyhyF7TfFzM9D7Qs2aH_kVAKQlVpppM26QTGAXh2YqCx6Pxy8k"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    health_and_safety
+                  </span>
+                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Safety &amp; PPE</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Compliance protective gear, site safety systems, and response equipment.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -534,12 +586,20 @@ export default function Home() {
                 Consult with our trade procurement experts today to discuss sourcing contracts, logistics terms (FOB, CIF, DDP), or project quotes.
               </p>
             </div>
-            <button
-              onClick={handleQuoteClick}
-              className="bg-[#D4A017] hover:bg-[#b38612] text-white px-12 py-5 font-button text-xs uppercase tracking-widest transition-all shadow-lg whitespace-nowrap"
-            >
-              Start Your Quote
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0 justify-center w-full lg:w-auto">
+              <button
+                onClick={handleQuoteClick}
+                className="bg-[#D4A017] hover:bg-[#b38612] text-white px-8 py-4 font-button text-xs uppercase tracking-widest transition-all shadow-lg whitespace-nowrap font-semibold cursor-pointer"
+              >
+                Get a Quote
+              </button>
+              <Link
+                href="/products"
+                className="border-2 border-white text-white px-8 py-4 font-button text-xs uppercase tracking-widest hover:bg-white hover:text-primary transition-all text-center whitespace-nowrap font-semibold"
+              >
+                View Products
+              </Link>
+            </div>
           </div>
         </div>
       </section>

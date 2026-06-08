@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Industries() {
   useEffect(() => {
@@ -271,16 +272,16 @@ export default function Industries() {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={handleQuoteClick}
-                  className="bg-primary text-white px-8 py-4 font-button text-xs uppercase tracking-wider hover:bg-primary-container transition-all"
+                  className="bg-primary text-white px-8 py-4 font-button text-xs uppercase tracking-wider hover:bg-primary-container transition-all font-semibold cursor-pointer"
                 >
-                  Start Project
+                  Get a Quote
                 </button>
-                <button 
-                  onClick={handleQuoteClick}
-                  className="border-2 border-primary text-primary px-8 py-4 font-button text-xs uppercase tracking-wider hover:bg-primary hover:text-white transition-all font-semibold"
+                <Link 
+                  href="/products"
+                  className="border-2 border-primary text-primary px-8 py-4 font-button text-xs uppercase tracking-wider hover:bg-primary hover:text-white transition-all text-center font-semibold"
                 >
-                  Inquire Sourcing
-                </button>
+                  View Products
+                </Link>
               </div>
             </div>
             <div className="hidden lg:block absolute right-0 top-0 h-full w-1/3 opacity-5 pointer-events-none">

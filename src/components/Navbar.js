@@ -33,6 +33,7 @@ export default function Navbar() {
     { name: "About Us", href: "/about" },
     { name: "Industries", href: "/industries" },
     { name: "Products", href: "/products" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const handleQuoteClick = () => {
