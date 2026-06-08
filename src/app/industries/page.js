@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function Industries() {
   useEffect(() => {
@@ -239,19 +240,27 @@ export default function Industries() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="flex flex-col items-center">
-              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">45+</span>
+              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">
+                <AnimatedCounter target={45} suffix="+" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-widest font-medium">Countries Served</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">500+</span>
+              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">
+                <AnimatedCounter target={500} suffix="+" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-widest font-medium">Global Suppliers</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">12k</span>
+              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">
+                <AnimatedCounter target={12} suffix="k" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-widest font-medium">Shipments Fulfilled</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">0</span>
+              <span className="font-display-lg text-4xl lg:text-5xl text-[#ffc641] mb-2 font-bold">
+                <AnimatedCounter target={0} suffix="" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-widest font-medium">Logistics Failures</span>
             </div>
           </div>

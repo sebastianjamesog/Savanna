@@ -190,7 +190,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     construction
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Construction</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Construction</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Heavy machinery, structural components, infrastructure support, and earthmoving assets.
                   </p>
@@ -212,7 +212,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     agriculture
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Agriculture</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Agriculture</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Farm equipment, harvesting systems, irrigation networks, and specialized spares.
                   </p>
@@ -234,7 +234,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     precision_manufacturing
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Manufacturing</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Manufacturing</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Production line systems, automation machinery, parts procurement, and consumables.
                   </p>
@@ -256,7 +256,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     local_shipping
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Automotive</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Automotive</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Commercial vehicle fleets, utility transport solutions, and spare parts coordination.
                   </p>
@@ -270,7 +270,7 @@ export default function Home() {
                 <span className="material-symbols-outlined text-4xl text-primary mb-4 group-hover:text-[#D4A017] transition-colors">
                   science
                 </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2">Chemicals &amp; Materials</h3>
+                <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Chemicals &amp; Materials</h3>
                 <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                   Industrial raw materials, custom chemicals, and specialized compounds sourced securely for manufacturers.
                 </p>
@@ -298,7 +298,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     medical_services
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Medical Equipment</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Medical Equipment</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Diagnostic systems, healthcare furniture, and medical consumables.
                   </p>
@@ -320,7 +320,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
                     health_and_safety
                   </span>
-                  <h3 className="font-headline-md text-lg text-primary mb-2 font-bold">Safety &amp; PPE</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Safety &amp; PPE</h3>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
                     Compliance protective gear, site safety systems, and response equipment.
                   </p>

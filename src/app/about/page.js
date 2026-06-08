@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import InteractiveMap from "@/components/InteractiveMap";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function About() {
   useEffect(() => {
@@ -72,22 +73,30 @@ export default function About() {
           {/* Stats Grid */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-primary p-8 flex flex-col justify-center items-center text-center rounded-xl shadow-md">
-              <span className="font-display-lg text-4xl text-[#ffdfa0] mb-2">20+</span>
+              <span className="font-display-lg text-4xl text-[#ffdfa0] mb-2">
+                <AnimatedCounter target={20} suffix="+" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-wider">Years Experience</span>
             </div>
             
             <div className="bg-surface-gray p-8 flex flex-col justify-center items-center text-center rounded-xl border-t-4 border-[#D4A017] shadow-sm">
-              <span className="font-display-lg text-4xl text-primary mb-2">45+</span>
+              <span className="font-display-lg text-4xl text-primary mb-2">
+                <AnimatedCounter target={45} suffix="+" />
+              </span>
               <span className="font-label-md text-xs text-gray-500 uppercase tracking-wider">Countries Served</span>
             </div>
             
             <div className="bg-surface-gray p-8 flex flex-col justify-center items-center text-center rounded-xl border-t-4 border-[#D4A017] shadow-sm">
-              <span className="font-display-lg text-4xl text-primary mb-2">500+</span>
+              <span className="font-display-lg text-4xl text-primary mb-2">
+                <AnimatedCounter target={500} suffix="+" />
+              </span>
               <span className="font-label-md text-xs text-gray-500 uppercase tracking-wider">Manufacturers</span>
             </div>
             
             <div className="bg-primary p-8 flex flex-col justify-center items-center text-center rounded-xl shadow-md">
-              <span className="font-display-lg text-4xl text-[#ffdfa0] mb-2">100%</span>
+              <span className="font-display-lg text-4xl text-[#ffdfa0] mb-2">
+                <AnimatedCounter target={100} suffix="%" />
+              </span>
               <span className="font-label-md text-xs text-white uppercase tracking-wider">Compliance</span>
             </div>
           </div>
