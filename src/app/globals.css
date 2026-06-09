@@ -90,12 +90,11 @@
 
 .gold-hover-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-top: 3px solid transparent;
 }
 
 .gold-hover-card:hover {
   transform: translateY(-6px);
-  border-top: 3px solid #D4A017;
+  border-color: #D4A017 !important;
 }
 
 .industry-card {

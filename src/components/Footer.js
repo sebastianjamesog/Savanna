@@ -2,14 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white border-t-4 border-[#D4A017] relative z-10">
+    <footer className="bg-[#011F45] text-white border-t-4 border-[#D4A017] relative z-10">
       <div className="max-w-container-max mx-auto px-margin-page py-section-desktop">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 justify-between">
-          
+
           {/* Logo and Description */}
           <div className="md:col-span-4 space-y-6">
-            <Link href="/" className="font-display-lg text-3xl font-bold uppercase tracking-wider block">
-              Savanna Crest
+            <Link href="/" className="flex items-center relative h-28 md:h-32 w-[199px] md:w-[228px]">
+              <img
+                src="/logo-dark-cropped.png"
+                alt="Savanna Crest Logo"
+                className="h-full w-full object-contain"
+              />
             </Link>
             <p className="text-gray-400 font-body-md max-w-sm leading-relaxed">
               The premier industrial partner for global procurement, logistics, and supply solutions. Bridging gaps, building futures.

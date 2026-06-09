@@ -211,33 +211,77 @@ export default function About() {
             </button>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white p-8 border border-gray-200 rounded-xl flex flex-col items-center justify-center transition-all duration-300 shadow-sm industry-card-hover group min-h-[140px]">
-              <span className="material-symbols-outlined text-4xl mb-3 text-primary group-hover:text-[#D4A017] transition-colors">
-                verified_user
-              </span>
-              <span className="font-label-md text-xs text-primary font-bold">ISO 9001:2015</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-150 flex flex-col items-center text-center justify-between min-h-[300px]">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-14 h-14 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] transition-all duration-300 mb-6 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">
+                    verified_user
+                  </span>
+                </div>
+                <h4 className="font-headline-md text-base text-primary font-bold mb-2">ISO 9001:2015</h4>
+                <p className="font-body-md text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                  Quality management systems ensuring supply consistency and operational excellence.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-[10px] font-bold text-[#D4A017] uppercase tracking-widest">
+                <span className="material-symbols-outlined text-sm mr-1">check_circle</span> Verified Standard
+              </div>
             </div>
-            
-            <div className="bg-white p-8 border border-gray-200 rounded-xl flex flex-col items-center justify-center transition-all duration-300 shadow-sm industry-card-hover group min-h-[140px]">
-              <span className="material-symbols-outlined text-4xl mb-3 text-primary group-hover:text-[#D4A017] transition-colors">
-                eco
-              </span>
-              <span className="font-label-md text-xs text-primary font-bold">ISO 14001:2015</span>
+
+            {/* Card 2 */}
+            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-150 flex flex-col items-center text-center justify-between min-h-[300px]">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-14 h-14 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] transition-all duration-300 mb-6 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">
+                    eco
+                  </span>
+                </div>
+                <h4 className="font-headline-md text-base text-primary font-bold mb-2">ISO 14001:2015</h4>
+                <p className="font-body-md text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                  Environmental management systems certifying our commitment to sustainable trade.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-[10px] font-bold text-[#D4A017] uppercase tracking-widest">
+                <span className="material-symbols-outlined text-sm mr-1">check_circle</span> Verified Standard
+              </div>
             </div>
-            
-            <div className="bg-white p-8 border border-gray-200 rounded-xl flex flex-col items-center justify-center transition-all duration-300 shadow-sm industry-card-hover group min-h-[140px]">
-              <span className="material-symbols-outlined text-4xl mb-3 text-primary group-hover:text-[#D4A017] transition-colors">
-                security
-              </span>
-              <span className="font-label-md text-xs text-primary font-bold">C-TPAT Certified</span>
+
+            {/* Card 3 */}
+            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-150 flex flex-col items-center text-center justify-between min-h-[300px]">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-14 h-14 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] transition-all duration-300 mb-6 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">
+                    security
+                  </span>
+                </div>
+                <h4 className="font-headline-md text-base text-primary font-bold mb-2">C-TPAT Certified</h4>
+                <p className="font-body-md text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                  Customs-Trade Partnership Against Terrorism securing supply chain corridors.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-[10px] font-bold text-[#D4A017] uppercase tracking-widest">
+                <span className="material-symbols-outlined text-sm mr-1">check_circle</span> Secure Supply Chain
+              </div>
             </div>
-            
-            <div className="bg-white p-8 border border-gray-200 rounded-xl flex flex-col items-center justify-center transition-all duration-300 shadow-sm industry-card-hover group min-h-[140px]">
-              <span className="material-symbols-outlined text-4xl mb-3 text-primary group-hover:text-[#D4A017] transition-colors">
-                factory
-              </span>
-              <span className="font-label-md text-xs text-primary font-bold">Sedex Member</span>
+
+            {/* Card 4 */}
+            <div className="gold-hover-card bg-white p-8 shadow-sm rounded-xl transition-all duration-300 group border border-gray-150 flex flex-col items-center text-center justify-between min-h-[300px]">
+              <div className="flex flex-col items-center w-full">
+                <div className="w-14 h-14 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] transition-all duration-300 mb-6 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">
+                    factory
+                  </span>
+                </div>
+                <h4 className="font-headline-md text-base text-primary font-bold mb-2">Sedex Member</h4>
+                <p className="font-body-md text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                  Validated membership tracking ethical manufacture, safety, and fair labor practices.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-[10px] font-bold text-[#D4A017] uppercase tracking-widest">
+                <span className="material-symbols-outlined text-sm mr-1">check_circle</span> Ethical Sourcing
+              </div>
             </div>
           </div>
         </div>

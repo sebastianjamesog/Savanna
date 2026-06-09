@@ -48,16 +48,28 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 h-20 flex items-center ${
-        isScrolledOrOpen
-          ? "bg-white shadow-md border-b-2 border-[#D4A017] text-primary"
-          : "bg-transparent text-white"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 h-24 md:h-28 flex items-center ${isScrolledOrOpen
+        ? "bg-white shadow-md border-b-2 border-[#D4A017] text-primary"
+        : "bg-transparent text-white"
+        }`}
     >
       <div className="max-w-container-max mx-auto px-margin-page w-full flex justify-between items-center">
         {/* Brand Logo */}
-        <Link href="/" className="font-display-lg text-2xl font-bold uppercase tracking-wider transition-colors duration-300">
-          Savanna Crest
+        <Link href="/" className="flex items-center py-1 relative h-20 md:h-24 w-[143px] md:w-[171px]">
+          {/* Light Logo */}
+          <img
+            src="/logo-cropped.jpeg"
+            alt="Savanna Crest Logo"
+            className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${isScrolledOrOpen ? "opacity-100" : "opacity-0"
+              }`}
+          />
+          {/* Dark Logo */}
+          <img
+            src="/logo-dark-cropped.png"
+            alt="Savanna Crest Logo"
+            className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${isScrolledOrOpen ? "opacity-0" : "opacity-100"
+              }`}
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -68,11 +80,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`font-button text-xs uppercase tracking-widest transition-colors py-1 border-b-2 ${
-                  isActive
-                    ? "border-[#D4A017] text-[#D4A017] font-bold"
-                    : "border-transparent hover:text-[#D4A017]"
-                }`}
+                className={`font-button text-xs uppercase tracking-widest transition-colors py-1 border-b-2 ${isActive
+                  ? "border-[#D4A017] text-[#D4A017] font-bold"
+                  : "border-transparent hover:text-[#D4A017]"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -104,9 +115,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-0 top-20 z-40 bg-white border-t border-gray-100 md:hidden transition-all duration-300 flex flex-col ${
-          mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
+        className={`fixed inset-0 top-24 z-40 bg-white border-t border-gray-100 md:hidden transition-all duration-300 flex flex-col ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+          }`}
       >
         <div className="flex flex-col p-6 space-y-4">
           {navLinks.map((link) => {
@@ -115,11 +125,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`font-button text-sm uppercase tracking-wider py-3 px-4 border-l-4 ${
-                  isActive
-                    ? "border-[#D4A017] bg-[#F7F8FA] text-[#D4A017] font-semibold"
-                    : "border-transparent text-gray-700 hover:bg-gray-50"
-                }`}
+                className={`font-button text-sm uppercase tracking-wider py-3 px-4 border-l-4 ${isActive
+                  ? "border-[#D4A017] bg-[#F7F8FA] text-[#D4A017] font-semibold"
+                  : "border-transparent text-gray-700 hover:bg-gray-50"
+                  }`}
               >
                 {link.name}
               </Link>

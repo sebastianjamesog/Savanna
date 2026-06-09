@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function InteractiveMap() {
-  const [activeHub, setActiveHub] = useState("dubai");
+  const [activeHub, setActiveHub] = useState(null);
   const [svgContent, setSvgContent] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -69,7 +69,7 @@ export default function InteractiveMap() {
   return (
     <div className="relative w-full aspect-[1009.67/665.96] min-h-[380px] bg-[#00112b] rounded-2xl overflow-hidden shadow-2xl border border-white/5 group/map">
       {/* Dynamic Style Injection for Active Country Highlight */}
-      {!loading && (
+      {!loading && activeHub && (
         <style dangerouslySetInnerHTML={{ __html: `
           #${hubs[activeHub].id} {
             fill: #1d4d8c !important;
@@ -203,22 +203,31 @@ export default function InteractiveMap() {
         })}
 
       {/* Info Card Drawer overlay (Glassmorphic design) */}
-      <div className="absolute bottom-4 left-4 right-4 md:right-auto md:w-80 bg-[#00112b]/85 backdrop-blur-md border border-white/10 p-5 rounded-xl text-white shadow-2xl transition-all duration-500 z-30">
-        <span className="font-label-md text-[9px] text-[#D4A017] uppercase tracking-widest block mb-1 font-bold">
-          Active Logistics Hub
-        </span>
-        <h3 className="font-display-lg text-base font-bold text-white mb-1.5 flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] animate-pulse"></span>
-          {hubs[activeHub].name}
-        </h3>
-        <p className="font-body-md text-[11px] text-gray-300 mb-3.5 leading-relaxed min-h-[32px]">
-          {hubs[activeHub].role}
-        </p>
-        <div className="border-t border-white/10 pt-3 flex items-center justify-between">
-          <span className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold">Route Coverage</span>
-          <span className="text-[11px] text-[#D4A017] font-semibold">{hubs[activeHub].coverage}</span>
+      {activeHub && (
+        <div className="absolute bottom-4 left-4 right-4 md:right-auto md:w-80 bg-[#00112b]/85 backdrop-blur-md border border-white/10 p-5 rounded-xl text-white shadow-2xl transition-all duration-500 z-30">
+          <button
+            onClick={() => setActiveHub(null)}
+            className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors"
+            aria-label="Close details"
+          >
+            <span className="material-symbols-outlined text-sm">close</span>
+          </button>
+          <span className="font-label-md text-[9px] text-[#D4A017] uppercase tracking-widest block mb-1 font-bold">
+            Active Logistics Hub
+          </span>
+          <h3 className="font-display-lg text-base font-bold text-white mb-1.5 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] animate-pulse"></span>
+            {hubs[activeHub].name}
+          </h3>
+          <p className="font-body-md text-[11px] text-gray-300 mb-3.5 leading-relaxed min-h-[32px]">
+            {hubs[activeHub].role}
+          </p>
+          <div className="border-t border-white/10 pt-3 flex items-center justify-between">
+            <span className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold">Route Coverage</span>
+            <span className="text-[11px] text-[#D4A017] font-semibold">{hubs[activeHub].coverage}</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
