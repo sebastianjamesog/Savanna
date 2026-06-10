@@ -139,74 +139,65 @@ export default function About() {
 
       {/* Leadership & Philosophy */}
       <section className="py-section-desktop max-w-container-max mx-auto px-margin-page reveal-on-scroll reveal-element">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="w-full lg:w-1/2 relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#D4A017]"></div>
-            <img
-              className="w-full h-[500px] object-cover brightness-90 shadow-2xl rounded-lg"
-              alt="Modern corporate glass and steel architectural angles represent engineering precision"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuABh7aNtsPsYf1KbfXhKYWxNRkCrA1o1tBoG5QE0RMMOGn0p7nOXx_hxPv_RSQjO9xtXOZ0jGKMFsu9-X1G-7c9jiUHcwRW9UW_s4NFYHvhanLEeXSziizsyeJMOcUBLMIPGDUK65Cm0HkIS0W_sMR7TaFQOVNnf-w6nYjyFttoCCUAKDJO0TO51UKASe0NqYn6uh6XldcSVZZPTp-2npOSq6O6wNOXLZqqLmBWlqbJfGlyhSyXifMHDLZjHCYetmVMxrIo3Vobv_I"
-            />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary"></div>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.2em] block font-semibold">
+            Our Code
+          </span>
+          <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-primary font-bold leading-tight">
+            Guided by Engineering Precision and Corporate Integrity
+          </h2>
+        </div>
 
-          <div className="w-full lg:w-1/2 space-y-8">
-            <div>
-              <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-widest mb-4 block font-semibold">
-                Our Code
-              </span>
-              <h2 className="font-headline-lg text-3xl md:text-4xl text-primary font-bold">
-                Guided by Engineering Precision and Corporate Integrity
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  num: "1",
-                  title: "Resilience by Design",
-                  desc: "We architect supply chains to withstand geopolitical shifts, material shortages, and market volatility, ensuring continuity for our partners.",
-                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBnaIsyGYBwQ6IB6cLzM5x0XeOQY00QWmBFtnT36ZXetRWtGSVRqe4GfAljkADafJ6CciFMuDjwyxaQykOjjA1dGHEK7_ydFZ1doLH5q_Lgd0vr1-l9hfnt05vrXx4pUVkncJ8tMbBz1cmT0eHkM3lPak-dIWa-XK8dVvBud0GZTf3nBCRbCkDg0AZHwNNTq_C0NsSILdrLcKHSJrRao-qtNWJ0eFtAFKJ4gcmmwVAzVaBF_VkB0jBvljHy1IkD3GADy6Z81nSm-gk"
-                },
-                {
-                  num: "2",
-                  title: "Transparent Stewardship",
-                  desc: "Full visibility is our mandate. We provide detailed compliance tracking and complete documentation audits for every procurement cycle.",
-                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_djCedv8MeGrVPlnUn0Cr9LCetixF1Lnrf96YjVG9nmrZFCFh6i9LvrK72KIxm_Hb9zL0H1FnG-MUTdmq5nzpm_3iTafixHGL2v3WOv2M7WMcHMh4rdcCfXbDlyHogxEPau1a3b-l2BVFxAOkdbi69NAq_EdCDK6MiqZU1sZFIvNYO-IlOwLUYxppGu8g64mfyjokR9C8IylUD_JPpHepZi91uL7Ke3F1ftWMeHAocZPB-L77_UaF2Z6z6Qmcgdbl27G7KFtuwgs"
-                },
-                {
-                  num: "3",
-                  title: "Sustainable Procurement",
-                  desc: "Growth must be responsible. We prioritize manufacturing partners who meet carbon-neutral objectives and fair labor international standards.",
-                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBw-kS6Z1O7Ua5PxU67wKvBE8QcAccr_QELXBrssFmz_A1EqVy8aEfThdnqCX1LEzO3rkt23IMY_EBJ0Sjls-79DmhHCR4rF9vkXsrbJl_MTB_WjY13cnejqyUxQdVU-xMoCr2M7Mi4cu-KxCk-H1U3mSYAJHldC1LF1PkyBuZQ_5TVgFBHO6-ngwNwyghcQvO9TW4KQvbw03-NMqx2Ku5GVpPPYPqtzND6OeFjkMFQ6pVH298cLbT3-LIjeqcTOcZnTACVcwmhFWA"
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="flex flex-col sm:flex-row gap-6 items-start p-4 bg-white hover:bg-surface-gray border border-transparent hover:border-gray-150 rounded-xl transition-all duration-300 group">
-                  {/* Thumbnail Image with Number Overlay */}
-                  <div className="flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden relative border border-gray-100 shadow-sm shrink-0">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors"></div> */}
-                    <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-primary text-[#ffdfa0] flex items-center justify-center font-display-lg font-bold text-[10px] shadow-md border border-white/20">
-                      {item.num}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-headline-md text-base text-primary mb-1 font-bold group-hover:text-[#D4A017] transition-colors duration-300">
-                      {item.title}
-                    </h4>
-                    <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              num: "1",
+              title: "Resilience by Design",
+              desc: "We architect supply chains to withstand geopolitical shifts, material shortages, and market volatility, ensuring continuity for our partners.",
+              image: "/images/about/resilience.png"
+            },
+            {
+              num: "2",
+              title: "Transparent Stewardship",
+              desc: "Full visibility is our mandate. We provide detailed compliance tracking and complete documentation audits for every procurement cycle.",
+              image: "/images/about/stewardship.png"
+            },
+            {
+              num: "3",
+              title: "Sustainable Procurement",
+              desc: "Growth must be responsible. We prioritize manufacturing partners who meet carbon-neutral objectives and fair labor international standards.",
+              image: "/images/about/procurement.png"
+            }
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col bg-white border border-gray-100 hover:border-[#D4A017]/40 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group"
+            >
+              {/* Image with Number Overlay */}
+              <div className="w-full h-60 overflow-hidden relative shrink-0">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute top-4 left-4 w-9 h-9 rounded-full bg-primary/95 text-[#ffdfa0] flex items-center justify-center font-display-lg font-bold text-sm shadow-md border border-white/20 backdrop-blur-sm">
+                  {item.num}
                 </div>
-              ))}
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex-grow flex flex-col justify-between space-y-3">
+                <div className="space-y-3">
+                  <h4 className="font-headline-md text-xl text-primary font-bold group-hover:text-[#D4A017] transition-colors duration-300">
+                    {item.title}
+                  </h4>
+                  <p className="font-body-md text-sm md:text-base text-gray-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
