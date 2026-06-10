@@ -96,14 +96,14 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[350px] pt-32 pb-16 flex items-center justify-center overflow-hidden bg-primary">
+      <section className="relative min-h-[350px] pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#111827]">
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-80"
             alt="Corporate skyscraper steel glass reflections"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuABh7aNtsPsYf1KbfXhKYWxNRkCrA1o1tBoG5QE0RMMOGn0p7nOXx_hxPv_RSQjO9xtXOZ0jGKMFsu9-X1G-7c9jiUHcwRW9UW_s4NFYHvhanLEeXSziizsyeJMOcUBLMIPGDUK65Cm0HkIS0W_sMR7TaFQOVNnf-w6nYjyFttoCCUAKDJO0TO51UKASe0NqYn6uh6XldcSVZZPTp-2npOSq6O6wNOXLZqqLmBWlqbJfGlyhSyXifMHDLZjHCYetmVMxrIo3Vobv_I"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/25"></div>
+          <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-container-max mx-auto px-margin-page text-center w-full">
           <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.3em] mb-4 block font-semibold">
@@ -120,7 +120,7 @@ export default function Contact() {
 
       {/* Main Grid: Form and Contacts */}
       <section className="py-section-desktop max-w-container-max mx-auto px-margin-page w-full reveal-on-scroll reveal-element">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Sourcing Form Column */}
           <div className="lg:col-span-7 bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 relative overflow-hidden">
@@ -287,58 +287,154 @@ export default function Contact() {
             )}
           </div>
           
-          {/* Contact Details Column */}
-          <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
-            <div className="space-y-6">
-              <h2 className="font-headline-lg text-2xl md:text-3xl text-primary font-bold">
-                Our Global Terminal Hubs
-              </h2>
-              <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                Connect directly with our local procurement officers and trade representatives to manage operations on the ground.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {offices.map((office, idx) => (
-                <div 
-                  key={idx}
-                  className="bg-white p-6 border border-gray-150 rounded-xl transition-all duration-300 shadow-sm hover:-translate-y-1 hover:border-[#D4A017] group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-[#ffdfa0] shrink-0">
-                      <span className="material-symbols-outlined text-lg">{office.icon}</span>
-                    </div>
-                    <div className="space-y-2 flex-1">
-                      <h4 className="font-headline-md text-base text-primary font-bold group-hover:text-[#D4A017] transition-colors">
-                        {office.city}
-                      </h4>
-                      <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                        {office.address}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-semibold">
-                        <a 
-                          href={office.phoneHref}
-                          className="flex items-center gap-1.5 text-primary hover:text-[#D4A017] transition-colors"
-                        >
-                          <span className="material-symbols-outlined text-sm text-[#D4A017]">phone</span>
-                          {office.phone}
-                        </a>
-                        <a 
-                          href={office.emailHref}
-                          className="flex items-center gap-1.5 text-[#D4A017] hover:underline"
-                        >
-                          <span className="material-symbols-outlined text-sm">mail</span>
-                          {office.email}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+          {/* Procurement Advisor Column */}
+          <div className="lg:col-span-5">
+            <div className="bg-white border border-gray-150 rounded-2xl shadow-xl overflow-hidden relative flex flex-col justify-between">
+              {/* Header Image */}
+              <div className="relative h-44 bg-[#001536] overflow-hidden">
+                <img 
+                  src="/images/advisor_banner_bg.png" 
+                  alt="Sourcing office banner" 
+                  className="w-full h-full object-cover opacity-50"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
+              </div>
+              
+              {/* Profile Image & Status (Overlapping) */}
+              <div className="relative px-8 pb-8 -mt-16 flex flex-col items-center sm:items-start">
+                <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg relative bg-white shrink-0">
+                  <img 
+                    src="/images/executive_agent.png" 
+                    alt="Sarah Jenkins - Senior Procurement Advisor"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white animate-pulse" title="Advisor Online"></div>
                 </div>
-              ))}
+                
+                {/* Advisor Info */}
+                <div className="mt-4 space-y-2.5 text-center sm:text-left">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <span className="py-0.5 px-2.5 bg-primary/10 text-primary text-[9px] uppercase font-bold tracking-wider rounded-full">
+                      Dubai HQ Desk
+                    </span>
+                    <span className="py-0.5 px-2.5 bg-emerald-50 text-emerald-700 text-[9px] uppercase font-bold tracking-wider rounded-full flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online Now
+                    </span>
+                  </div>
+                  
+                  <h3 className="font-display-lg text-2xl text-primary font-bold">
+                    Sarah Jenkins
+                  </h3>
+                  <p className="font-label-md text-xs text-[#D4A017] uppercase tracking-wider font-semibold">
+                    Senior Procurement Advisor
+                  </p>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Dedicated support for international shipping, volume-based contract negotiations, custom specifications clearance, and trade compliance audits.
+                  </p>
+                </div>
+
+                {/* Direct Contacts */}
+                <div className="w-full mt-6 pt-6 border-t border-gray-150 space-y-3">
+                  <a 
+                    href="tel:+971507984175"
+                    className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-[#D4A017] hover:bg-surface-gray transition-all group"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors">
+                      <span className="material-symbols-outlined text-base">phone</span>
+                    </div>
+                    <div>
+                      <p className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Direct Hotline</p>
+                      <p className="text-xs text-primary font-bold">+(971) 507-984-175</p>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="mailto:contact@savannacrest.com"
+                    className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-[#D4A017] hover:bg-surface-gray transition-all group"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors">
+                      <span className="material-symbols-outlined text-base">mail</span>
+                    </div>
+                    <div>
+                      <p className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Corporate Email</p>
+                      <p className="text-xs text-primary font-bold">contact@savannacrest.com</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className="px-8 pb-8 w-full">
+                <a 
+                  href="https://wa.me/971507984175"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 bg-[#D4A017] hover:bg-[#b38612] text-white font-button text-xs uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg rounded-lg"
+                >
+                  <span className="material-symbols-outlined text-sm">chat</span>
+                  Start WhatsApp Session
+                </a>
+              </div>
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Global Terminal Hubs Grid Section */}
+      <section className="py-section-desktop bg-surface-gray border-t border-gray-200 reveal-on-scroll reveal-element">
+        <div className="max-w-container-max mx-auto px-margin-page">
+          <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
+            <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.2em] block font-semibold">
+              Regional Presence
+            </span>
+            <h2 className="font-headline-lg text-3xl md:text-4xl text-primary font-bold">
+              Our Global Terminal Hubs
+            </h2>
+            <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+              Connect directly with our local procurement officers and trade representatives to manage operations on the ground.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offices.map((office, idx) => (
+              <div 
+                key={idx}
+                className="bg-white p-8 border border-gray-150 rounded-xl transition-all duration-300 shadow-sm hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-md group flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-[#ffdfa0] shrink-0">
+                    <span className="material-symbols-outlined text-xl">{office.icon}</span>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-headline-md text-lg text-primary font-bold group-hover:text-[#D4A017] transition-colors">
+                      {office.city}
+                    </h4>
+                    <p className="font-body-md text-xs text-gray-500 leading-relaxed min-h-[40px]">
+                      {office.address}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6 text-xs font-semibold">
+                  <a 
+                    href={office.phoneHref}
+                    className="flex items-center gap-2 text-primary hover:text-[#D4A017] transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-base text-[#D4A017]">phone</span>
+                    {office.phone}
+                  </a>
+                  <a 
+                    href={office.emailHref}
+                    className="flex items-center gap-2 text-[#D4A017] hover:underline"
+                  >
+                    <span className="material-symbols-outlined text-base">mail</span>
+                    {office.email}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

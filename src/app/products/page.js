@@ -34,7 +34,7 @@ export default function Products() {
         {
           name: "Industrial Tractors",
           badge: "Heavy Sourcing",
-          image: "https://images.unsplash.com/photo-1530263003720-760b3a5019b1?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/industrial_tractor.png",
           specs: [
             { label: "Capacity", value: "Up to 15 Tons Pulling" },
             { label: "Drive Type", value: "Electric & Hydraulic" },
@@ -44,7 +44,7 @@ export default function Products() {
         {
           name: "Cane Loaders",
           badge: "Harvest Systems",
-          image: "https://images.unsplash.com/photo-1592919016382-748a609dcf9b?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/cane_loader.png",
           specs: [
             { label: "Arm Reach", value: "Max 6.2 Meters" },
             { label: "Lift Capacity", value: "2,500 kg Grab Lift" },
@@ -60,7 +60,7 @@ export default function Products() {
         {
           name: "Excavators",
           badge: "Excavation",
-          image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/excavator.png",
           specs: [
             { label: "Operating Weight", value: "1.5t to 90t Range" },
             { label: "Grading Accuracy", value: "GPS-Ready Grade Control" },
@@ -70,7 +70,7 @@ export default function Products() {
         {
           name: "Wheel Loaders",
           badge: "Quarrying",
-          image: "https://images.unsplash.com/photo-1542621334-1c483a7b4699?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/wheel_loader.png",
           specs: [
             { label: "Linkage Type", value: "Heavy Z-Bar Linkages" },
             { label: "Payload Limit", value: "Up to 8.5 Tons Payload" },
@@ -80,7 +80,7 @@ export default function Products() {
         {
           name: "Crawler Dozers",
           badge: "Grading & Clearing",
-          image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/crawler_dozer.png",
           specs: [
             { label: "Cabin Rating", value: "ROPS/FOPS-Certified" },
             { label: "Blade Options", value: "Semi-U / Straight / Angle" },
@@ -90,7 +90,7 @@ export default function Products() {
         {
           name: "Injection Moulding",
           badge: "Industrial Presses",
-          image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/injection_moulding.png",
           specs: [
             { label: "Clamping Force", value: "90T to 3200T Capacity" },
             { label: "Efficiency", value: "Energy-Efficient Cycles" },
@@ -106,7 +106,7 @@ export default function Products() {
         {
           name: "Toyota Hilux Pickup",
           badge: "Commercial Fleet",
-          image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/toyota_hilux.png",
           specs: [
             { label: "Platform Fit", value: "Toyota Hilux 4x4 Offroad" },
             { label: "Engine Type", value: "2.8L / 2.4L Heavy Diesel" },
@@ -116,7 +116,7 @@ export default function Products() {
         {
           name: "Ambulances - Type A & C",
           badge: "Emergency Fleet",
-          image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/ambulance.png",
           specs: [
             { label: "Layout Spec", value: "WHO-Compliant Layout" },
             { label: "Equipment Level", value: "Advanced Life Support" },
@@ -126,7 +126,7 @@ export default function Products() {
         {
           name: "Fire Trucks & Tenders",
           badge: "Airport & Municipal",
-          image: "https://images.unsplash.com/photo-1599740831464-5cbb14ee9439?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/fire_truck.png",
           specs: [
             { label: "Standard Code", value: "NFPA & EN Compliant" },
             { label: "Pump Capacity", value: "Up to 6000 L/min Pump" },
@@ -142,7 +142,7 @@ export default function Products() {
         {
           name: "OTR & Commercial Tyres",
           badge: "Heavy Duty Tyres",
-          image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/otr_tyre.png",
           specs: [
             { label: "Tyre Classes", value: "OTR / Ag / Heavy Truck" },
             { label: "Tread Terrain", value: "All-Terrain & Off-Road" },
@@ -152,7 +152,7 @@ export default function Products() {
         {
           name: "Brake & Suspension Parts",
           badge: "Chassis Parts",
-          image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/brake_parts.png",
           specs: [
             { label: "Fit Models", value: "Toyota / Isuzu / Mitsubishi" },
             { label: "Standards", value: "OEM & Premium Quality" },
@@ -162,7 +162,7 @@ export default function Products() {
         {
           name: "Engine & Hydraulic Filters",
           badge: "Fleet Consumables",
-          image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/hydraulic_filter.png",
           specs: [
             { label: "Sourcing Fits", value: "Toyota / CAT / Komatsu" },
             { label: "Efficiency", value: "Sub-Micron Filtration" },
@@ -178,7 +178,7 @@ export default function Products() {
         {
           name: "Aluminium Sulphate",
           badge: "Water Coagulant",
-          image: "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/aluminium_sulphate.png",
           specs: [
             { label: "Purity Grade", value: "High-Purity Grade Solid" },
             { label: "Main Utility", value: "Water Purifying & Sizing" },
@@ -188,7 +188,7 @@ export default function Products() {
         {
           name: "Paraformaldehyde",
           badge: "Resin Synthesis",
-          image: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/paraformaldehyde.png",
           specs: [
             { label: "Purity Assay", value: "91% & 96% Powder Prills" },
             { label: "Best Use", value: "Resin / Paint / Coating" },
@@ -198,7 +198,7 @@ export default function Products() {
         {
           name: "Caustic Soda Flakes",
           badge: "Industrial Alkali",
-          image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/caustic_soda.png",
           specs: [
             { label: "Concentration", value: "NaOH 99% Purity Flakes" },
             { label: "Industries", value: "Soap, Detergent & Mining" },
@@ -214,7 +214,7 @@ export default function Products() {
         {
           name: "Diagnostic Equipment",
           badge: "Clinical Devices",
-          image: "https://images.unsplash.com/photo-1516613902305-fac270239247?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/diagnostic_equipment.png",
           specs: [
             { label: "Devices", value: "Ultrasound / ECG / Monitor" },
             { label: "Certification", value: "CE & FDA Quality Standard" },
@@ -224,7 +224,7 @@ export default function Products() {
         {
           name: "Hospital Beds & Furniture",
           badge: "Ward Furniture",
-          image: "https://images.unsplash.com/photo-1586773860418-d3b3de97e99f?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/hospital_bed.png",
           specs: [
             { label: "Bed Model", value: "Electric Adjustable ICU Bed" },
             { label: "Features", value: "Pressure Relief / Side Rails" },
@@ -234,7 +234,7 @@ export default function Products() {
         {
           name: "Electric Wheelchairs",
           badge: "Patient Mobility",
-          image: "https://images.unsplash.com/photo-1546422401-68b415cbf8de?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/electric_wheelchair.png",
           specs: [
             { label: "Motor Drive", value: "Dual-Motor Electric Drive" },
             { label: "Battery Range", value: "Up to 25km Per Charge" },
@@ -250,7 +250,7 @@ export default function Products() {
         {
           name: "PPE & Safety Wear",
           badge: "Site Safety PPE",
-          image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/ppe_safety_wear.png",
           specs: [
             { label: "Safety Standard", value: "EN / ISO / ANSI Certified" },
             { label: "Clothing Type", value: "Flame-Retardant / Hi-Vis" },
@@ -260,7 +260,7 @@ export default function Products() {
         {
           name: "Fire Safety Equipment",
           badge: "Facility Safety",
-          image: "https://images.unsplash.com/photo-1606206591513-ad60137d478a?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/fire_safety_equipment.png",
           specs: [
             { label: "Fire Classes", value: "Class A / B / C Rated Solid" },
             { label: "Hardware", value: "Extinguishers & Hose Reels" },
@@ -270,7 +270,7 @@ export default function Products() {
         {
           name: "Training Manikins",
           badge: "First Aid Training",
-          image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
+          image: "/images/products/training_manikin.png",
           specs: [
             { label: "Model Type", value: "CPR Training Manikins" },
             { label: "Focus", value: "Basic Life Support Training" },
@@ -446,24 +446,7 @@ export default function Products() {
               ))}
             </div>
 
-            {/* Pagination Controls */}
-            <div className="mt-16 flex justify-center items-center gap-2 text-xs">
-              <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:border-primary text-gray-600 transition-colors">
-                <span className="material-symbols-outlined text-sm">chevron_left</span>
-              </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">
-                1
-              </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:border-primary text-gray-600 transition-colors">
-                2
-              </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:border-primary text-gray-600 transition-colors">
-                3
-              </button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:border-primary text-gray-600 transition-colors">
-                <span className="material-symbols-outlined text-sm">chevron_right</span>
-              </button>
-            </div>
+
           </section>
 
         </div>

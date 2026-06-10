@@ -4,8 +4,37 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import InteractiveMap from "@/components/InteractiveMap";
 
+const slides = [
+  {
+    image: "/slider1.png",
+    tag: "Global Industrial Partner",
+    title: "Global Procurement & Industrial Supply Solutions",
+    description: "Empowering international trade through robust supply chains, precision engineering, and elite procurement strategies for the world's most demanding industries."
+  },
+  {
+    image: "/slider2.png",
+    tag: "Precision Sourcing",
+    title: "Precision Sourced Heavy Machinery & Spares",
+    description: "Providing high-performance machinery, certified components, and custom parts sourcing to minimize downtime and elevate industrial efficiency."
+  },
+  {
+    image: "/slider3.png",
+    tag: "Energy & Infrastructure",
+    title: "Connecting Power & Infrastructure Markets",
+    description: "Securing industrial raw materials, advanced electrical grid equipment, and chemicals for critical infrastructure development worldwide."
+  },
+  {
+    image: "/slider4.png",
+    tag: "Agricultural Machinery",
+    title: "Sustaining Agricultural Development & Growth",
+    description: "Supplying advanced harvesting systems, irrigation networks, and farming equipment to fuel food security and rural economies."
+  }
+];
+
 export default function Home() {
   const [activeItems, setActiveItems] = useState({});
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     // Reveal animation observer
@@ -27,6 +56,24 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000); // Change slide every 6 seconds
+
+    return () => clearInterval(timer);
+  }, [isPaused, currentSlide]);
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   const handleQuoteClick = () => {
     window.dispatchEvent(new CustomEvent("open-quote-modal"));
   };
@@ -34,28 +81,46 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
-      <header className="relative min-h-screen pt-32 pb-20 flex items-center justify-start overflow-hidden bg-primary">
+      <header
+        className="relative min-h-screen pt-32 pb-20 flex items-center justify-start overflow-hidden bg-[#111827]"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Background Slides */}
         <div className="absolute inset-0 z-0">
-          <img
-            className="w-full h-full object-cover opacity-50"
-            alt="Cinematic wide shot of a massive industrial shipping port at dusk, featuring towering cranes and rows of containers"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnaIsyGYBwQ6IB6cLzM5x0XeOQY00QWmBFtnT36ZXetRWtGSVRqe4GfAljkADafJ6CciFMuDjwyxaQykOjjA1dGHEK7_ydFZ1doLH5q_Lgd0vr1-l9hfnt05vrXx4pUVkncJ8tMbBz1cmT0eHkM3lPak-dIWa-XK8dVvBud0GZTf3nBCRbCkDg0AZHwNNTq_C0NsSILdrLcKHSJrRao-qtNWJ0eFtAFKJ4gcmmwVAzVaBF_VkB0jBvljHy1IkD3GADy6Z81nSm-gk"
-          />
-          <div className="absolute inset-0 industrial-overlay"></div>
+          {slides.map((slide, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <div
+                key={idx}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-80 z-10" : "opacity-0 z-0"
+                  }`}
+              >
+                <img
+                  className={`w-full h-full object-cover ${isActive ? "animate-kenburns" : ""
+                    } ${isPaused && isActive ? "animation-play-paused" : ""}`}
+                  alt={slide.title}
+                  src={slide.image}
+                />
+              </div>
+            );
+          })}
+          <div className="absolute inset-0 bg-black/40 z-20"></div>
         </div>
-        
-        <div className="relative z-10 max-w-container-max mx-auto px-margin-page w-full">
-          <div className="max-w-3xl">
-            <span className="inline-block py-1 px-4 mb-6 bg-[#D4A017] text-white font-label-md text-xs uppercase tracking-[0.2em] font-semibold">
-              Global Industrial Partner
+
+        {/* Slide Content with key-triggered staggered animations */}
+        <div className="relative z-30 max-w-container-max mx-auto px-margin-page w-full">
+          <div key={currentSlide} className="max-w-3xl">
+            <span className="inline-block py-1 px-4 mb-6 bg-[#D4A017] text-white font-label-md text-xs uppercase tracking-[0.2em] font-semibold animate-fade-in-up">
+              {slides[currentSlide].tag}
             </span>
-            <h1 className="font-display-lg text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-tight">
-              Global Procurement &amp; Industrial Supply Solutions
+            <h1 className="font-display-lg text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight animate-fade-in-up animation-delay-100">
+              {slides[currentSlide].title}
             </h1>
-            <p className="font-body-lg text-base md:text-lg text-white/80 mb-10 max-w-xl leading-relaxed">
-              Empowering international trade through robust supply chains, precision engineering, and elite procurement strategies for the world's most demanding industries.
+            <p className="font-body-lg text-base md:text-lg text-white/80 mb-10 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200">
+              {slides[currentSlide].description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-300">
               <Link
                 href="/products"
                 className="bg-[#D4A017] text-white px-10 py-4 font-button text-xs uppercase tracking-widest hover:bg-[#b38612] transition-all text-center"
@@ -71,29 +136,90 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Floating Navigation Arrows */}
+        <button
+          onClick={handlePrevSlide}
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-40 bg-black/20 hover:bg-black/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 border border-white/10 active:scale-95 group focus:outline-none cursor-pointer hidden md:flex"
+          aria-label="Previous slide"
+        >
+          <span className="material-symbols-outlined transition-transform group-hover:-translate-x-0.5">chevron_left</span>
+        </button>
+        <button
+          onClick={handleNextSlide}
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-40 bg-black/20 hover:bg-black/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 border border-white/10 active:scale-95 group focus:outline-none cursor-pointer hidden md:flex"
+          aria-label="Next slide"
+        >
+          <span className="material-symbols-outlined transition-transform group-hover:translate-x-0.5">chevron_right</span>
+        </button>
+
+        {/* Progress Dots Navigation */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex items-center gap-3">
+          {slides.map((_, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className="group py-2 focus:outline-none cursor-pointer"
+                aria-label={`Go to slide ${idx + 1}`}
+              >
+                {/* Horizontal line representing indicator */}
+                <div className="w-12 h-[3px] bg-white/30 rounded-full overflow-hidden transition-all duration-300 group-hover:bg-white/50 relative">
+                  {isActive && (
+                    <div
+                      className={`absolute top-0 left-0 h-full bg-[#D4A017] rounded-full animate-progress ${isPaused ? "animation-play-paused" : ""
+                        }`}
+                    />
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </header>
 
       {/* Trust Bar */}
       <section className="bg-surface-gray py-12 border-y border-gray-200">
         <div className="max-w-container-max mx-auto px-margin-page">
-          <p className="text-center font-label-md text-xs text-gray-500 uppercase tracking-widest mb-10 opacity-70">
+          <p className="text-center font-label-md text-xs text-gray-500 uppercase tracking-widest mb-8 opacity-70">
             Trusted by Global Industry Leaders
           </p>
-          <div className="flex flex-wrap justify-center sm:justify-between items-center gap-8 md:gap-12 opacity-40 transition-all duration-700">
-            <div className="flex items-center gap-2 font-display-lg text-2xl font-bold text-primary">
-              <span className="material-symbols-outlined">factory</span> INDUS
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+            {/* Logo 1 */}
+            <div className="flex items-center justify-center p-5 bg-white border border-gray-100 rounded-xl shadow-xs opacity-75 hover:opacity-100 hover:border-[#D4A017] hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-3 font-display-lg text-lg font-bold text-primary tracking-wide">
+                <span className="material-symbols-outlined text-[#D4A017] text-2xl group-hover:scale-110 transition-transform duration-300">factory</span>
+                <span className="tracking-widest text-primary/80 group-hover:text-primary transition-colors duration-300">INDUS</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 font-display-lg text-2xl font-bold text-primary">
-              <span className="material-symbols-outlined">precision_manufacturing</span> CORE
+            {/* Logo 2 */}
+            <div className="flex items-center justify-center p-5 bg-white border border-gray-100 rounded-xl shadow-xs opacity-75 hover:opacity-100 hover:border-[#D4A017] hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-3 font-display-lg text-lg font-bold text-primary tracking-wide">
+                <span className="material-symbols-outlined text-[#D4A017] text-2xl group-hover:scale-110 transition-transform duration-300">precision_manufacturing</span>
+                <span className="tracking-widest text-primary/80 group-hover:text-primary transition-colors duration-300">CORE</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 font-display-lg text-2xl font-bold text-primary">
-              <span className="material-symbols-outlined">local_shipping</span> ATLAS
+            {/* Logo 3 */}
+            <div className="flex items-center justify-center p-5 bg-white border border-gray-100 rounded-xl shadow-xs opacity-75 hover:opacity-100 hover:border-[#D4A017] hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-3 font-display-lg text-lg font-bold text-primary tracking-wide">
+                <span className="material-symbols-outlined text-[#D4A017] text-2xl group-hover:scale-110 transition-transform duration-300">local_shipping</span>
+                <span className="tracking-widest text-primary/80 group-hover:text-primary transition-colors duration-300">ATLAS</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 font-display-lg text-2xl font-bold text-primary">
-              <span className="material-symbols-outlined">terminal</span> TECH
+            {/* Logo 4 */}
+            <div className="flex items-center justify-center p-5 bg-white border border-gray-100 rounded-xl shadow-xs opacity-75 hover:opacity-100 hover:border-[#D4A017] hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-3 font-display-lg text-lg font-bold text-primary tracking-wide">
+                <span className="material-symbols-outlined text-[#D4A017] text-2xl group-hover:scale-110 transition-transform duration-300">terminal</span>
+                <span className="tracking-widest text-primary/80 group-hover:text-primary transition-colors duration-300">TECH</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 font-display-lg text-2xl font-bold text-primary">
-              <span className="material-symbols-outlined">build</span> PRIME
+            {/* Logo 5 */}
+            <div className="flex items-center justify-center p-5 bg-white border border-gray-100 rounded-xl shadow-xs opacity-75 hover:opacity-100 hover:border-[#D4A017] hover:shadow-md transition-all duration-300 group col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-3 font-display-lg text-lg font-bold text-primary tracking-wide">
+                <span className="material-symbols-outlined text-[#D4A017] text-2xl group-hover:scale-110 transition-transform duration-300">build</span>
+                <span className="tracking-widest text-primary/80 group-hover:text-primary transition-colors duration-300">PRIME</span>
+              </div>
             </div>
           </div>
         </div>
@@ -347,7 +473,7 @@ export default function Home() {
               Why Corporate Partners Trust Us
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-12">
             <div className="flex gap-6">
               <div className="flex-shrink-0 w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg border border-white/10 text-[#D4A017]">
@@ -360,7 +486,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-6">
               <div className="flex-shrink-0 w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg border border-white/10 text-[#D4A017]">
                 <span className="material-symbols-outlined text-2xl">verified_user</span>
@@ -526,7 +652,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className="lg:col-span-3">
             <InteractiveMap />
           </div>
@@ -544,28 +670,73 @@ export default function Home() {
               Standard Sourcing Process
             </h2>
           </div>
-          
+
           <div className="relative">
-            {/* Horizontal connector line on desktop */}
-            <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-200 -translate-y-1/2 hidden lg:block z-0"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative z-10">
               {[
-                { step: "01", title: "Requirement Analysis", desc: "Consulting with engineers to review technical specs, quantities, and standards." },
-                { step: "02", title: "Global Sourcing", desc: "Requesting quotes from qualified global partners and negotiating bulk pricing." },
-                { step: "03", title: "Quality Audit", desc: "Rigorous quality inspection at manufacturers' plants before shipment." },
-                { step: "04", title: "Logistics Coordination", desc: "Managing cargo, customs brokerage, and multi-modal transport lines." },
-                { step: "05", title: "Site Delivery", desc: "Seamless shipping and local handling to deliver assets to your doorstep." },
-                { step: "06", title: "After-Sales Support", desc: "Supporting warranties, supply documentation, and future replacements." },
+                {
+                  step: "01",
+                  title: "Requirement Analysis",
+                  desc: "Consulting with engineers to review technical specs, quantities, and standards.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_djCedv8MeGrVPlnUn0Cr9LCetixF1Lnrf96YjVG9nmrZFCFh6i9LvrK72KIxm_Hb9zL0H1FnG-MUTdmq5nzpm_3iTafixHGL2v3WOv2M7WMcHMh4rdcCfXbDlyHogxEPau1a3b-l2BVFxAOkdbi69NAq_EdCDK6MiqZU1sZFIvNYO-IlOwLUYxppGu8g64mfyjokR9C8IylUD_JPpHepZi91uL7Ke3F1ftWMeHAocZPB-L77_UaF2Z6z6Qmcgdbl27G7KFtuwgs"
+                },
+                {
+                  step: "02",
+                  title: "Global Sourcing",
+                  desc: "Requesting quotes from qualified global partners and negotiating bulk pricing.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQ8YSBLlTgRnYKgCe6BJDdfreW1UaLmCu678w8VMeVhA200Ig4EKzHphAgEiuP2nrVTjJd9U4yuAhM4PTlgZhwMlwHhcw1KSXHNZwGJlvsH3noSwgPMFzZLkMJAR8yju2GYJxiKZbvoKI9AVb3nEWgW_FqBgYtENbjoxiiy6wgbm_EHFCc99IKytoH72H22399c7xBO9r2E-irHSXkLa-ui4ntkZrJE5h9grdFvL2xVt1wtAgZfNOTFr3xjKur1QBhGJsKG7xWKTo"
+                },
+                {
+                  step: "03",
+                  title: "Quality Audit",
+                  desc: "Rigorous quality inspection at manufacturers' plants before shipment.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyZBDgBXAxpgmk6lZbZ53e-njWCX86lBomjLLTyyVHSRHPcIaf-TgFeUB2NQcKaNFx5d51dOfMgopycfJ3j82VFlk58MKFlXrbtU8NPuXsahkiK6hzg5HOxbkUJ0LVX1Gn1ObxmYZvwDeerYu1c7ZcZzJasTtUvEVTBP8nboSD_O8KGfrGeHi9zJDxznkNWJzyc5lkN-yjykIAeZJfF458sR9Gk5J4wIFeM7IWA95gMe6H5rHEzc9fvrX63-MAMuP3mxzNMN8W3w4"
+                },
+                {
+                  step: "04",
+                  title: "Logistics Coordination",
+                  desc: "Managing cargo, customs brokerage, and multi-modal transport lines.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBnaIsyGYBwQ6IB6cLzM5x0XeOQY00QWmBFtnT36ZXetRWtGSVRqe4GfAljkADafJ6CciFMuDjwyxaQykOjjA1dGHEK7_ydFZ1doLH5q_Lgd0vr1-l9hfnt05vrXx4pUVkncJ8tMbBz1cmT0eHkM3lPak-dIWa-XK8dVvBud0GZTf3nBCRbCkDg0AZHwNNTq_C0NsSILdrLcKHSJrRao-qtNWJ0eFtAFKJ4gcmmwVAzVaBF_VkB0jBvljHy1IkD3GADy6Z81nSm-gk"
+                },
+                {
+                  step: "05",
+                  title: "Site Delivery",
+                  desc: "Seamless shipping and local handling to deliver assets to your doorstep.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBu0s4xy3JB_EijxyaRrLFoKXfbURarZXDnAEgld3wq8w600v2WSAZyCUOAyZetPbR4MEIFeP6Fg0wxZpHDoxvQzYeBxl9thZPmr1EGZaT_pGPdursY6wXxEXAp536mW6l_UGyQ5p2WfPTg0Mf1DtEB3xRb7ZYnybuDcK2MURcq2Q53i6MmfgJ2HzJnIsFUU1stf2kHJIZ4i0YPi1CU0O0hrwuhSylWn05QgY806vcilx5mXu6HHlnei2ycHCevuinknnlXsLyyhz4"
+                },
+                {
+                  step: "06",
+                  title: "After-Sales Support",
+                  desc: "Supporting warranties, supply documentation, and future replacements.",
+                  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBwHNRYmDcEfBbROrWZbzwlvmVxddlR6GMt-MBHxxMmslH49qKoJPaAfojRm_ComoLy5LXdFI81FVe8W1I23kYAJManHvF5EavxxqK0sBXRJjaVYokN-woqdrYE-MRdhIuVsGE2L88Mt_EXUeOtSLVtUfwEIoQGpO-an3WRuB4SsmLsRE7k9wCddiz5M2PnaKP6OkqZmiSuRa9cyk0sYi38chZ0VzyhyF7TfFzM9D7Qs2aH_kVAKQlVpppM26QTGAXh2YqCx6Pxy8k"
+                },
               ].map((item, idx) => (
-                <div key={idx} className="bg-white lg:bg-transparent p-6 lg:p-0 rounded-xl border border-gray-100 lg:border-none shadow-sm lg:shadow-none text-center space-y-4">
-                  <div className="w-14 h-14 bg-primary text-white flex items-center justify-center rounded-full mx-auto text-lg font-bold border-4 border-white shadow-md ring-8 ring-gray-50">
-                    {item.step}
+                <div key={idx} className="bg-white rounded-xl border border-gray-100 shadow-xs flex flex-col overflow-hidden hover:shadow-md hover:border-[#D4A017] transition-all duration-300 group">
+                  {/* Card Image Header */}
+                  <div className="w-full h-28 overflow-hidden relative shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-primary/10"></div>
                   </div>
-                  <h4 className="font-headline-md text-base text-primary font-bold">{item.title}</h4>
-                  <p className="font-body-md text-xs text-gray-500 leading-relaxed max-w-[180px] mx-auto">
-                    {item.desc}
-                  </p>
+
+                  {/* Card Body */}
+                  <div className="p-5 pt-7 relative flex-1 flex flex-col items-center text-center">
+                    {/* Floating Step Number */}
+                    <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary text-white flex items-center justify-center rounded-full text-xs font-bold border-2 border-white shadow-md z-10 group-hover:bg-[#D4A017] transition-colors duration-300">
+                      {item.step}
+                    </div>
+
+                    <h4 className="font-headline-md text-sm text-primary font-bold mb-2 group-hover:text-[#D4A017] transition-colors duration-300">
+                      {item.title}
+                    </h4>
+
+                    <p className="font-body-md text-[11px] text-gray-500 leading-relaxed max-w-[160px]">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
