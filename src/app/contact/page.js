@@ -45,53 +45,7 @@ export default function Contact() {
     setFormSubmitted(true);
   };
 
-  const offices = [
-    {
-      city: "Dubai HQ (Global Logistics Hub)",
-      address: "Premises No. 34812-001, IFZA Business Park, DDP, Dubai, UAE",
-      phone: "+(971) 507-984-175",
-      phoneHref: "tel:+971507984175",
-      email: "contact@savannacrest.com",
-      emailHref: "mailto:contact@savannacrest.com",
-      icon: "hub"
-    },
-    {
-      city: "Riyadh Terminal",
-      address: "Al Malaz District, Riyadh, Kingdom of Saudi Arabia",
-      phone: "+(966) 114-789-234",
-      phoneHref: "tel:+966114789234",
-      email: "riyadh@savannacrest.com",
-      emailHref: "mailto:riyadh@savannacrest.com",
-      icon: "corporate_fare"
-    },
-    {
-      city: "Nairobi Terminal",
-      address: "Mombasa Road, Industrial Area, Nairobi, Kenya",
-      phone: "+(254) 203-456-789",
-      phoneHref: "tel:+254203456789",
-      email: "nairobi@savannacrest.com",
-      emailHref: "mailto:nairobi@savannacrest.com",
-      icon: "warehouse"
-    },
-    {
-      city: "Johannesburg Terminal",
-      address: "Kempton Park, Johannesburg, South Africa",
-      phone: "+(27) 119-786-543",
-      phoneHref: "tel:+27119786543",
-      email: "joburg@savannacrest.com",
-      emailHref: "mailto:joburg@savannacrest.com",
-      icon: "local_shipping"
-    },
-    {
-      city: "Lagos Terminal",
-      address: "Apapa Port Complex, Apapa, Lagos, Nigeria",
-      phone: "+(234) 123-456-7890",
-      phoneHref: "tel:+2341234567890",
-      email: "lagos@savannacrest.com",
-      emailHref: "mailto:lagos@savannacrest.com",
-      icon: "sailing"
-    }
-  ];
+
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -287,59 +241,63 @@ export default function Contact() {
             )}
           </div>
           
-          {/* Procurement Advisor Column */}
+          {/* Global Headquarters Contact Card */}
           <div className="lg:col-span-5">
             <div className="bg-white border border-gray-150 rounded-2xl shadow-xl overflow-hidden relative flex flex-col justify-between">
               {/* Header Image */}
               <div className="relative h-44 bg-[#001536] overflow-hidden">
                 <img 
                   src="/images/advisor_banner_bg.png" 
-                  alt="Sourcing office banner" 
+                  alt="Dubai Global Headquarters Office banner" 
                   className="w-full h-full object-cover opacity-50"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
               </div>
               
-              {/* Profile Image & Status (Overlapping) */}
+              {/* Icon & Details (Overlapping) */}
               <div className="relative px-8 pb-8 -mt-16 flex flex-col items-center sm:items-start">
-                <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg relative bg-white shrink-0">
-                  <img 
-                    src="/images/executive_agent.png" 
-                    alt="Sarah Jenkins - Senior Procurement Advisor"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white animate-pulse" title="Advisor Online"></div>
+                <div className="w-24 h-24 rounded-2xl border-4 border-white shadow-lg relative bg-primary flex items-center justify-center text-[#D4A017] shrink-0">
+                  <span className="material-symbols-outlined text-4xl">corporate_fare</span>
                 </div>
                 
-                {/* Advisor Info */}
-                <div className="mt-4 space-y-2.5 text-center sm:text-left">
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                    <span className="py-0.5 px-2.5 bg-primary/10 text-primary text-[9px] uppercase font-bold tracking-wider rounded-full">
-                      Dubai HQ Desk
-                    </span>
-                    <span className="py-0.5 px-2.5 bg-emerald-50 text-emerald-700 text-[9px] uppercase font-bold tracking-wider rounded-full flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online Now
-                    </span>
-                  </div>
+                {/* Office Info */}
+                <div className="mt-4 space-y-2.5 text-center sm:text-left w-full">
+                  <span className="py-0.5 px-2.5 bg-primary/10 text-primary text-[9px] uppercase font-bold tracking-wider rounded-full inline-block">
+                    Dubai Global Headquarters
+                  </span>
                   
                   <h3 className="font-display-lg text-2xl text-primary font-bold">
-                    Sarah Jenkins
+                    Savanna Crest Global
                   </h3>
                   <p className="font-label-md text-xs text-[#D4A017] uppercase tracking-wider font-semibold">
-                    Senior Procurement Advisor
+                    General Trading LLC
                   </p>
                   <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                    Dedicated support for international shipping, volume-based contract negotiations, custom specifications clearance, and trade compliance audits.
+                    Serving as our central administrative, trade finance, and supply chain logistics hub coordinating global trade lanes.
                   </p>
                 </div>
 
-                {/* Direct Contacts */}
+                {/* Direct Contacts & Address */}
                 <div className="w-full mt-6 pt-6 border-t border-gray-150 space-y-3">
+                  {/* Address */}
+                  <div className="flex items-start gap-3 p-3 rounded-lg border border-gray-100">
+                    <div className="w-9 h-9 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
+                      <span className="material-symbols-outlined text-base">location_on</span>
+                    </div>
+                    <div>
+                      <p className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Office Address</p>
+                      <p className="text-xs text-primary font-medium leading-relaxed">
+                        Premises No. 34812-001, IFZA Business Park, DDP, Dubai, UAE
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
                   <a 
                     href="tel:+971507984175"
                     className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-[#D4A017] hover:bg-surface-gray transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors">
+                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors shrink-0">
                       <span className="material-symbols-outlined text-base">phone</span>
                     </div>
                     <div>
@@ -348,11 +306,12 @@ export default function Contact() {
                     </div>
                   </a>
 
+                  {/* Email */}
                   <a 
                     href="mailto:contact@savannacrest.com"
                     className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-[#D4A017] hover:bg-surface-gray transition-all group"
                   >
-                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors">
+                    <div className="w-9 h-9 rounded-full bg-primary/5 group-hover:bg-[#D4A017]/10 flex items-center justify-center text-primary group-hover:text-[#D4A017] transition-colors shrink-0">
                       <span className="material-symbols-outlined text-base">mail</span>
                     </div>
                     <div>
@@ -372,7 +331,7 @@ export default function Contact() {
                   className="w-full py-3.5 bg-[#D4A017] hover:bg-[#b38612] text-white font-button text-xs uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg rounded-lg"
                 >
                   <span className="material-symbols-outlined text-sm">chat</span>
-                  Start WhatsApp Session
+                  Start WhatsApp Chat
                 </a>
               </div>
             </div>
@@ -381,62 +340,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Global Terminal Hubs Grid Section */}
-      <section className="py-section-desktop bg-surface-gray border-t border-gray-200 reveal-on-scroll reveal-element">
-        <div className="max-w-container-max mx-auto px-margin-page">
-          <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
-            <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.2em] block font-semibold">
-              Regional Presence
-            </span>
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-primary font-bold">
-              Our Global Terminal Hubs
-            </h2>
-            <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-              Connect directly with our local procurement officers and trade representatives to manage operations on the ground.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {offices.map((office, idx) => (
-              <div 
-                key={idx}
-                className="bg-white p-8 border border-gray-150 rounded-xl transition-all duration-300 shadow-sm hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-md group flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-[#ffdfa0] shrink-0">
-                    <span className="material-symbols-outlined text-xl">{office.icon}</span>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-headline-md text-lg text-primary font-bold group-hover:text-[#D4A017] transition-colors">
-                      {office.city}
-                    </h4>
-                    <p className="font-body-md text-xs text-gray-500 leading-relaxed min-h-[40px]">
-                      {office.address}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6 text-xs font-semibold">
-                  <a 
-                    href={office.phoneHref}
-                    className="flex items-center gap-2 text-primary hover:text-[#D4A017] transition-colors"
-                  >
-                    <span className="material-symbols-outlined text-base text-[#D4A017]">phone</span>
-                    {office.phone}
-                  </a>
-                  <a 
-                    href={office.emailHref}
-                    className="flex items-center gap-2 text-[#D4A017] hover:underline"
-                  >
-                    <span className="material-symbols-outlined text-base">mail</span>
-                    {office.email}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Global Sourcing Network Map Section */}
       <section className="py-section-desktop bg-primary text-white overflow-hidden reveal-on-scroll reveal-element border-t-4 border-[#D4A017]">

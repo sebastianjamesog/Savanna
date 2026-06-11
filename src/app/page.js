@@ -390,23 +390,25 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 5 (Wide Solar Card) */}
-            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group md:col-span-2 border border-gray-100 flex flex-col sm:flex-row overflow-hidden min-h-[320px]">
-              <div className="flex-1 p-8 flex flex-col justify-center">
-                <span className="material-symbols-outlined text-4xl text-primary mb-4 group-hover:text-[#D4A017] transition-colors">
-                  science
-                </span>
-                <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Chemicals &amp; Materials</h3>
-                <p className="font-body-md text-xs text-gray-500 leading-relaxed">
-                  Industrial raw materials, custom chemicals, and specialized compounds sourced securely for manufacturers.
-                </p>
-              </div>
-              <div className="w-full sm:w-1/2 min-h-[200px] sm:min-h-full overflow-hidden relative shrink-0">
+            {/* Card 5 */}
+            <div className="gold-hover-card bg-white shadow-sm rounded-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between overflow-hidden min-h-[320px]">
+              <div className="w-full h-32 overflow-hidden relative">
                 <img
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                   alt="Industrial chemicals and compounds processing"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ8YSBLlTgRnYKgCe6BJDdfreW1UaLmCu678w8VMeVhA200Ig4EKzHphAgEiuP2nrVTjJd9U4yuAhM4PTlgZhwMlwHhcw1KSXHNZwGJlvsH3noSwgPMFzZLkMJAR8yju2GYJxiKZbvoKI9AVb3nEWgW_FqBgYtENbjoxiiy6wgbm_EHFCc99IKytoH72H22399c7xBO9r2E-irHSXkLa-ui4ntkZrJE5h9grdFvL2xVt1wtAgZfNOTFr3xjKur1QBhGJsKG7xWKTo"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQFFPyLwMQJgRsNEU0NcXqF_Xg9vFhlUmpJDujfRVJWSaZptdzBD8rOR_I0AuMY3DsiDATG0VqRrUy40FPifkOWF_A826lTM5r74wsBQYyHQJv9BtGAONAW9nTbsNbIPSlMgFlTM8UnMMQ0ChyNLRoGhrI_Su8Tos1SLIwM674TB82xGaiFI6uH1W9XZiKEmMUbxLkS1DDbdHiZAym9R3FLUEsmpB0Ye43ktm2hZbdtuPyf2b62faJsFpljm8_P5r9gBUuv_ng3A"
                 />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="material-symbols-outlined text-3xl text-primary mb-3 group-hover:text-[#D4A017] transition-colors">
+                    science
+                  </span>
+                  <h3 className="font-headline-md text-xl text-primary mb-2 font-bold">Chemicals &amp; Materials</h3>
+                  <p className="font-body-md text-xs text-gray-500 leading-relaxed">
+                    Industrial raw materials, custom chemicals, and specialized compounds sourced securely for manufacturers.
+                  </p>
+                </div>
               </div>
             </div>
 
