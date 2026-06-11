@@ -34,11 +34,11 @@ export default function About() {
       <section className="relative min-h-[400px] pt-32 pb-16 flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-55"
+            className="w-full h-full object-cover opacity-70"
             alt="Cinematic high-angle view of a bustling global logistics terminal at dawn"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp99J8_4pFB3aJyXEuAEqRn435fW3YGT2Xjgnc-p1f09YGiEEiNCB-PS_hBZA3tp9h7l-7FMGUdorMEf4TEDaRPNkOmnZIDXqz3lq9Hpn4VhHdb82CvxubL4SY5Fb43NeGSBo1m1DAF1LAULY2awNfgepYhSzGQQG9q-0mrfJu17u1gQS898dCWCEKE0M4mbTdTITbyL-xfzH5ggnPW4AIusG-RZPygx66v-fWtuKqEpNtVQIc0I8zRqk6BupXq5MV37zX9xU4sEY"
+            src="/images/headers/about_header.png"
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/25"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/75 to-primary/40 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-container-max mx-auto px-margin-page text-center w-full">
           <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.3em] mb-4 block font-semibold">

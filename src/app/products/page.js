@@ -301,10 +301,11 @@ export default function Products() {
       <header className="relative min-h-[300px] pt-32 pb-16 flex items-center bg-primary-container overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-70"
             alt="High-resolution panoramic shot of modern industrial manufacturing plant"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9j1cYpjH8q_U68A2BWCWMvG9vaM9TcQVJAhIC5g9IXviRimN01o7rG1rVb4ORpEf2ewFWYKYW-PPQ9UCKor7sMJTo3B4D-ES5y6pXhYn03dMHYDT_UDKdZ-X5hMSmG_kzfc5hwtskfCAHKazURhg4boR6wNYmJgWy4UlAWJRqXQe6Fcs3_8mmMZcwb5CYF7d6iVYH1uip0YkITWTOSJzT0qDTFgUuPgl6XZe2ZJHw0Wm8VRh9sMIK0_Mga7-9hiuAY1Fh6rN36Q"
+            src="/images/headers/products_header.png"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/75 to-primary/40 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-container-max mx-auto px-margin-page w-full">
           <div className="max-w-2xl">

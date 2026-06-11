@@ -50,14 +50,14 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[350px] pt-32 pb-16 flex items-center justify-center overflow-hidden bg-[#111827]">
+      <section className="relative min-h-[350px] pt-32 pb-16 flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <img
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-70"
             alt="Corporate skyscraper steel glass reflections"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABh7aNtsPsYf1KbfXhKYWxNRkCrA1o1tBoG5QE0RMMOGn0p7nOXx_hxPv_RSQjO9xtXOZ0jGKMFsu9-X1G-7c9jiUHcwRW9UW_s4NFYHvhanLEeXSziizsyeJMOcUBLMIPGDUK65Cm0HkIS0W_sMR7TaFQOVNnf-w6nYjyFttoCCUAKDJO0TO51UKASe0NqYn6uh6XldcSVZZPTp-2npOSq6O6wNOXLZqqLmBWlqbJfGlyhSyXifMHDLZjHCYetmVMxrIo3Vobv_I"
+            src="/images/headers/contact_header.png"
           />
-          <div className="absolute inset-0 bg-black/45"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/75 to-primary/40 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-container-max mx-auto px-margin-page text-center w-full">
           <span className="font-label-md text-xs text-[#D4A017] uppercase tracking-[0.3em] mb-4 block font-semibold">

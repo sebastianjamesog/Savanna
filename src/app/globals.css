@@ -105,6 +105,19 @@
   width: 100%;
 }
 
+.industry-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff 65%, #FAF4E1 100%) !important;
+  border: 1px solid rgba(212, 160, 23, 0.15) !important;
+}
+
+.industry-card-hover:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #ffffff 40%, #F5E8C9 100%) !important;
+  border-color: rgba(212, 160, 23, 0.45) !important;
+  box-shadow: 0 20px 25px -5px rgba(212, 160, 23, 0.16), 0 10px 10px -5px rgba(212, 160, 23, 0.1) !important;
+}
+
 .industry-img {
   transition: filter 0.5s ease;
 }
